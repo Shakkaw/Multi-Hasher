@@ -1,0 +1,6 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file alias="file-hash.svg">icons/certificate-server.svg</file>
+    <file alias="file-github.svg">icons/folder-github.svg</file>
+</qresource>
+</RCC>
