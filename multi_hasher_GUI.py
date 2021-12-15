@@ -27,7 +27,7 @@ from PyQt5.QtWidgets import QApplication, QCheckBox, QFormLayout, QLabel, QLineE
 from PyQt5.QtGui import QIcon
 import hashlib
 
-    
+
 
 class Window(QWidget):
     def __init__(self, parent=None):
@@ -231,38 +231,46 @@ class Window(QWidget):
     def sha1buttonClicked(self):
 
         path = self.sha1_filepath.text()
-
-        with open(path, "rb") as f:
-            bytes = f.read()
-            hash = hashlib.sha1(bytes).hexdigest()
-            self.results.setPlainText(hash)
+        try:
+            with open(path, "rb") as f:
+                bytes = f.read()
+                hash = hashlib.sha1(bytes).hexdigest()
+                self.results.setPlainText(hash)
+        except:
+            return 0
 
     def sha256buttonClicked(self):
 
         path = self.sha256_filepath.text()
-
-        with open(path,"rb") as f:
-            bytes = f.read()
-            hash = hashlib.sha256(bytes).hexdigest()
-            self.results.setPlainText(hash)
+        try:
+            with open(path,"rb") as f:
+                bytes = f.read()
+                hash = hashlib.sha256(bytes).hexdigest()
+                self.results.setPlainText(hash)
+        except:
+            return 0
 
     def sha512buttonClicked(self):
         
         path = self.sha512_filepath.text()
-
-        with open(path, "rb") as f:
-            bytes = f.read()
-            hash = hashlib.sha512(bytes).hexdigest()
-            self.results.setPlainText(hash)
+        try:
+            with open(path, "rb") as f:
+                bytes = f.read()
+                hash = hashlib.sha512(bytes).hexdigest()
+                self.results.setPlainText(hash)
+        except:
+            return 0
 
     def md5buttonClicked(self):
 
         path = self.md5_filepath.text()
-
-        with open(path, "rb") as f:
-            bytes = f.read()
-            hash = hashlib.md5(bytes).hexdigest()
-            self.results.setPlainText(hash)
+        try:
+            with open(path, "rb") as f:
+                bytes = f.read()
+                hash = hashlib.md5(bytes).hexdigest()
+                self.results.setPlainText(hash)
+        except:
+            return 0
     
     def aboutbuttonClicked(self):
         webbrowser.open("https://github.com/Shakkaw?tab=repositories")
